@@ -1,0 +1,66 @@
+div.header{
+    display: flex;
+    flex-direction: row;
+    width: 100vh;
+}
+h1 {
+    color: white;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;
+}
+h2 {
+    color: black;
+}
+div#weatherCard-body{
+    color: black;
+   float: right;
+   top: 230px;
+   bottom:0; 
+   width: 100%;  
+   overflow: scroll;
+}
+.weatherCardCity {
+    color: black;
+    float:right;
+    padding-left: 75px;
+    margin-left: 20%;
+}
+h4 {
+    color:white;
+    text-align: center;
+}
+form.citySearch input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+    margin-left: 10px;
+  }
+  
+  /* Style the submit button */
+  form.citySearch button {
+    float: left;
+    width: 15%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+    margin-right: 10px;
+
+  }
+  .sideNav {
+    height: 100vh; /* Full-height: remove this if you want "auto" height */
+    width: 20%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    left: 0;
+    background-color: dimgray;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
