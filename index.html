@@ -31,19 +31,15 @@
             </form>
         </div>
     </div>
-    <div class="card">
-        <div class="card-header" id="weatherCardCity">
-        </div>
-        <div class="card-body" id="weatherCard">
-        </div>
-    </div>
+<div id="weatherCard">
+
     </div>
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
     function searchWeather(cityName) {
-        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=40509749bf6a75c51fb5afcc4584d8b6";
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=40509749bf6a75c51fb5afcc4584d8b6";
 
         $.ajax({
             url: queryURL,
@@ -52,15 +48,15 @@
 
             console.log(response);
 
-            var location = $("<h2>").text(response.name);
-            var icon = $("<i>").attr("src", response.icon);
-            var temperature = $("<h3>").text(response.main.temp);
-            var humid = $("<h3>").text(response.main.humidity);
-            var wind = $("<h3>").text(response.wind.speed);
+            var location = $("<h2>").text("Current weather for: " + response.name);
+            var conditions = $("<h3>").text("Current conditions: "+ response.weather[0].description);
+            var icon = $("<img>").attr(response.weather[0].icon);
+            var temperature = $("<h3>").text("Temperature: " + response.main.temp + "F");
+            var humid = $("<h3>").text("Current humidity: "+ response.main.humidity + "%");
+            var wind = $("<h3>").text("Wind speed: "+ response.wind.speed +"mph");
 
             $("#weatherCard").empty();
-            $("#weatherCard").append(icon, temperature, humid, wind);
-            $("#weatherCardCity").append(location);
+            $("#weatherCard").append(location,conditions, icon, temperature, humid, wind);
         });
     }
 

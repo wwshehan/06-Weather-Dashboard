@@ -11,21 +11,17 @@ h1 {
     padding: 10px;
 }
 h2 {
-    color: black;
+    font-weight: bold;
+    color: slategrey;
+    text-emphasis: outline;
 }
-div#weatherCard-body{
-    color: black;
-   float: right;
+div#weatherCard{
+color: darkslategray;
    top: 230px;
    bottom:0; 
    width: 100%;  
    overflow: scroll;
-}
-.weatherCardCity {
-    color: black;
-    float:right;
-    padding-left: 75px;
-    margin-left: 20%;
+   padding-left: 21%;
 }
 h4 {
     color:white;
